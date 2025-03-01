@@ -22,7 +22,7 @@ if user_prompt:
     with st.spinner("Generating definition..."):
         try:
             response = model.generate_content(
-                f"Give me a simple definition all in one sentence (the word might be in any language): {user_prompt}",
+                f"Give me a simple definition all in one sentence (the word might be in any language, translate to english, and focus on giving the definition,): {user_prompt}",
                 stream=True
             )
             response_text = "".join(chunk.text for chunk in response if hasattr(chunk, "text") and chunk.text)
